@@ -3,7 +3,7 @@ import * as movieController from "../controllers/movieController.js";
 
 const api = express.Router()
 
-api.post("/movie", movieController.CreateMovie)
+api.post("/movie", movieController.createMovie)
 api.get("/movie", movieController.listMovie)
 api.get("/movie/:id", movieController.detailMovie)
 api.put("/movie/:id", movieController.updateMovie)

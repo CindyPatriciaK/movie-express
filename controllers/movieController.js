@@ -19,7 +19,7 @@ export const listMovie = async (req, res)=>{
     }
 };
 
-export const CreateMovie = async (req, res)=>{
+export const createMovie = async (req, res)=>{
     try {
         const request = req.body
 
