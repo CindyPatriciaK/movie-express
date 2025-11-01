@@ -6,7 +6,7 @@ const MovieSchema = new mongoose.Schema(
             type : String,
             unique : true,
             required : true,
-            trims : true,
+            trim : true,
         },
         tahunRilis : {
             type : String,
