@@ -74,28 +74,28 @@ export const updateMovie = async (req, res) => {
     }
 
 }
-export const detailMovie = async (req, res)=>{
+export const detailMovie = async (req, res) => {
     try {
-        const id = req.params?.id
-       
+        const id = req.params?.id;
+
         if (!id) {
             return res.status(400).json({
                 message: "Id movie wajib di isi",
                 data: null,
             })
         }
-    const movie = await movieModel.findById(id);
-    if(!movie){
-        return res.status(404).json({
-            message: "Movie tidak ditemukan",
-            data: null,
-        })
-    }
-    return res.status(200).json({
+        const movie = await movieModel.findById(id);
+        if (!movie) {
+            return res.status(404).json({
+                message: "Movie tidak ditemukan",
+                data: null,
+            })
+        }
+        return res.status(200).json({
             message: "Detail Movie",
             data: movie,
         })
-    }catch (error) {
+    } catch (error) {
         return res.status(500).json({
             message: "Terjadi kesalahan pada server",
             error: error.message,
