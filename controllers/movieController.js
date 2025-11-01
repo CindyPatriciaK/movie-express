@@ -19,7 +19,7 @@ export const listMovie = async (req, res)=>{
     }
 };
 
-export const addMovie = async (req, res)=>{
+export const CreateMovie = async (req, res)=>{
     try {
         const request = req.body
 
@@ -32,7 +32,7 @@ export const addMovie = async (req, res)=>{
             message: "Movie berhasil dibuat",
             data: response
         })
-}catch (error) {
+    }catch (error) {
         res.status(500).json({
             message: error.message,
             data: null
