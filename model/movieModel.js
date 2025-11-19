@@ -18,6 +18,7 @@ const MovieSchema = new mongoose.Schema(
             required : true,
             trim : true,
         },
+        
     },
     {
         timestpams : true
