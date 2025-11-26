@@ -3,8 +3,10 @@ import movieModel from "../model/movieModel.js";
 
 export const listMovie = async (req, res)=>{
     try {
-        const movies = await movieModel.find({});
-
+        const movies = await movieModel.find({
+            createdBy : req.user?.user_id
+        }).sort({createdAt : -1});
+            
         return res.status (200).json({
             message : "List semua movie",
             data : movies,
@@ -21,16 +23,18 @@ export const listMovie = async (req, res)=>{
 
 export const createMovie = async (req, res)=>{
     try {
-        const request = req.body
+        const {judul, tahunRilis, sutradara } = req.body;
 
-        const response = await movieModel.create({
-            judul : request.judul,
-            tahunRilis : request.tahunRilis,
-            sutradara : request.sutradara
-        })
+        if(!judul || !tahunRilis || !sutradara){
+            return res.status(400).json ({
+                message : "Semua data wajib diisi",
+                data : null
+            });
+        }
+        const movie = await movieModel.create({judul, tahunRilis, sutradara, createdBy : req.user?.user_id});
         res.status(201).json({
-            message: "Movie berhasil dibuat",
-            data: response
+            message: "Movie berhasil ditambahkan",
+            data: movie
         })
     }catch (error) {
         res.status(500).json({
@@ -50,11 +54,11 @@ export const updateMovie = async (req, res) => {
                 data: null
             })
         }
-        const response = await movieModel.findByIdAndUpdate(id, {
-            judul : request.judul,
-            tahunRilis : request.tahunRilis,
-            sutradara : request.sutradara
-        })
+        const updateMovie = await movieModel.findByIdAndUpdate({
+            _id : id,
+            createdBy : req.user?.user_id
+        },{judul , tahunRilis, sutradara},{new: true}
+        );
 
         if (!response) {
             return res.status(500).json({
@@ -84,7 +88,10 @@ export const detailMovie = async (req, res) => {
                 data: null,
             })
         }
-        const movie = await movieModel.findById(id);
+        const movie = await movieModel.findById({
+            _id : id,
+            createdBy: req.user?.user_id
+        });
         if (!movie) {
             return res.status(404).json({
                 message: "Movie tidak ditemukan",
@@ -113,7 +120,10 @@ export const deleteMovie = async (req, res)=>{
                 data : null,
             })
         }
-        const movie = await movieModel.findByIdAndDelete(id);
+        const movie = await movieModel.findByIdAndDelete({
+            _id : id,
+            createdBy : req.user?.user_id
+        });
         if (movie) {
             return res.status(200).json({
                 message: "Movie berhasil dihapus",
