@@ -12,6 +12,7 @@ export const signIn = async (req, res) => {
                 data: null
             });
         }
+
         const user = await UserModel.findOne({ email });
         if (!user) {
             return res.status(400).send({
@@ -19,6 +20,7 @@ export const signIn = async (req, res) => {
                 data: null
             });
         }
+
         const isMatch = await verifyPassword(password, user.password);
         if (!isMatch) {
             return res.status(400).send({
@@ -26,12 +28,14 @@ export const signIn = async (req, res) => {
                 data: null
             });
         }
+
         const token = getJwtToken(user._id, user.username);
 
         return res.status(200).send({
-            error: 'Login berhasil',
+            message : 'Login berhasil',
             data: { token }
         });
+
     } catch (error) {
         return res.status(400).send({
             message: error.message,
@@ -51,23 +55,20 @@ export const signUp = async (req, res) => {
                 data: null
             });
         }
-        const hashedPassword = await hashedPassowrd(password);
+
+        const hashed = await hashedPassword(password);
 
         const newUser = await UserModel.create({
             username,
             email,
-            password: hashedPassword
+            password: hashed
         });
-        if (newUser) {
-            return res.status(200).send({
-                message: 'Berhasil melakukan pendaftaran, silahkan login',
-                data: null
-            });
-        }
-        return res.status(500).send({
-            message: 'Gagal mendaftar, silahkan coba lagi',
+
+        return res.status(200).send({
+            message: 'Berhasil melakukan pendaftaran, silahkan login',
             data: null
         });
+
     } catch (error) {
         return res.status(400).send({
             message: error.message,
