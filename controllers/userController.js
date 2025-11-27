@@ -32,7 +32,7 @@ export const signIn = async (req, res) => {
         const token = getJwtToken(user._id, user.username);
 
         return res.status(200).send({
-            message : 'Login berhasil',
+            message: 'Login berhasil',
             data: { token }
         });
 

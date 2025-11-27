@@ -8,8 +8,18 @@
 	},
 	"item": [
 		{
-			"name": "addMovie",
+			"name": "CreateMovie",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkyNmI4MzhjYTU3MmRlYzc4OTNkZmRkIiwidXNlcm5hbWUiOiJDaW5keSBQYXRyaWNpYSIsImlhdCI6MTc2NDIwOTY1OCwiZXhwIjoxNzY0MjEwNTU4fQ.v0tvjklSoSG72FpQLMPnOWN2lNCVW5WbFYkV-KDMjNU",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -20,7 +30,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"judul\" : \"Barbie\",\r\n    \"tahunRilis\" : \"2021\",\r\n    \"sutradara\" : \"celvine\"\r\n}",
+					"raw": "{\r\n    \"judul\" : \"Avatar 2\",\r\n    \"tahunRilis\" : \"2022\",\r\n    \"sutradara\" : \"James cameron\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -48,6 +58,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkyNmI4MzhjYTU3MmRlYzc4OTNkZmRkIiwidXNlcm5hbWUiOiJDaW5keSBQYXRyaWNpYSIsImlhdCI6MTc2NDIwOTY1OCwiZXhwIjoxNzY0MjEwNTU4fQ.v0tvjklSoSG72FpQLMPnOWN2lNCVW5WbFYkV-KDMjNU",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [
 					{
@@ -58,7 +78,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"judul\"     : \"Barbie\",\r\n    \"tahunRilis\" : \"2021\",\r\n    \"sutradara\" : \"celvine\"\r\n}",
+					"raw": "{\r\n    \"judul\" : \"Avatar 2\",\r\n    \"tahunRilis\" : \"2022\",\r\n    \"sutradara\" : \"James cameron\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -86,6 +106,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkyNmI4MzhjYTU3MmRlYzc4OTNkZmRkIiwidXNlcm5hbWUiOiJDaW5keSBQYXRyaWNpYSIsImlhdCI6MTc2NDIwOTY1OCwiZXhwIjoxNzY0MjEwNTU4fQ.v0tvjklSoSG72FpQLMPnOWN2lNCVW5WbFYkV-KDMjNU",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [
 					{
@@ -96,7 +126,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"judul\"     : \"Barbie\",\r\n    \"tahunRilis\" : \"2021\",\r\n    \"sutradara\" : \"celvine\"\r\n}",
+					"raw": "{\r\n    \"judul\" : \"Avatar 2\",\r\n    \"tahunRilis\" : \"2022\",\r\n    \"sutradara\" : \"James cameron\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -104,7 +134,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/movie/68fcd9fa83e22f28714c8317",
+					"raw": "http://localhost:3000/api/movie/6927b404fbfcd144ad97f8c4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -113,7 +143,7 @@
 					"path": [
 						"api",
 						"movie",
-						"68fcd9fa83e22f28714c8317"
+						"6927b404fbfcd144ad97f8c4"
 					]
 				}
 			},
@@ -122,6 +152,16 @@
 		{
 			"name": "updateMovie",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkyNmI4MzhjYTU3MmRlYzc4OTNkZmRkIiwidXNlcm5hbWUiOiJDaW5keSBQYXRyaWNpYSIsImlhdCI6MTc2NDIwOTY1OCwiZXhwIjoxNzY0MjEwNTU4fQ.v0tvjklSoSG72FpQLMPnOWN2lNCVW5WbFYkV-KDMjNU",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [
 					{
@@ -132,7 +172,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"judul\"     : \"Barbie fly\",\r\n    \"tahunRilis\" : \"2021\",\r\n    \"sutradara\" : \"celvine\"\r\n}",
+					"raw": "{\r\n    \"judul\" : \"Avatar 2 2022\",\r\n    \"tahunRilis\" : \"2022\",\r\n    \"sutradara\" : \"James cameron\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -140,7 +180,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/movie/68fcd9fa83e22f28714c8317",
+					"raw": "http://localhost:3000/api/movie/6927b404fbfcd144ad97f8c4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -149,7 +189,7 @@
 					"path": [
 						"api",
 						"movie",
-						"68fcd9fa83e22f28714c8317"
+						"6927b404fbfcd144ad97f8c4"
 					]
 				}
 			},
@@ -158,6 +198,16 @@
 		{
 			"name": "deleteMovie",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjkyNmI4MzhjYTU3MmRlYzc4OTNkZmRkIiwidXNlcm5hbWUiOiJDaW5keSBQYXRyaWNpYSIsImlhdCI6MTc2NDIwOTY1OCwiZXhwIjoxNzY0MjEwNTU4fQ.v0tvjklSoSG72FpQLMPnOWN2lNCVW5WbFYkV-KDMjNU",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [
 					{
@@ -168,7 +218,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"judul\"     : \"Barbie fly\",\r\n    \"tahunRilis\" : \"2021\",\r\n    \"sutradara\" : \"celvine\"\r\n}",
+					"raw": "{\r\n    \"judul\" : \"Avatar 2 2022\",\r\n    \"tahunRilis\" : \"2022\",\r\n    \"sutradara\" : \"James cameron\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -176,7 +226,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/movie/68fcd9fa83e22f28714c8317",
+					"raw": "http://localhost:3000/api/movie/6927b404fbfcd144ad97f8c4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -185,7 +235,71 @@
 					"path": [
 						"api",
 						"movie",
-						"68fcd9fa83e22f28714c8317"
+						"6927b404fbfcd144ad97f8c4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Cindy Patricia\",\r\n    \"email\" : \"cindypatricia@gmail.com\",\r\n    \"password\" : \"cindypatricia098\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"cindypatricia@gmail.com\",\r\n    \"password\" : \"cindypatricia098\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"signin"
 					]
 				}
 			},
