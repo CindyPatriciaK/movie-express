@@ -8,10 +8,10 @@ const api = express.Router()
 api.post("/signin", userController.signIn);
 api.post("/signup", userController.signUp);
 
-api.post("/movie", authenticateTokenMiddleware, movieController.createMovie);
-api.get("/movie", authenticateTokenMiddleware, movieController.listMovie);
-api.get("/movie/:id", authenticateTokenMiddleware, movieController.detailMovie);
-api.put("/movie/:id", authenticateTokenMiddleware, movieController.updateMovie);
-api.delete("/movie/:id", authenticateTokenMiddleware, movieController.deleteMovie);
+api.post("/movies", authenticateTokenMiddleware, movieController.createMovie);
+api.get("/movies", authenticateTokenMiddleware, movieController.listMovie);
+api.get("/movies/:id", authenticateTokenMiddleware, movieController.detailMovie);
+api.put("/movies/:id", authenticateTokenMiddleware, movieController.updateMovie);
+api.delete("/movies/:id", authenticateTokenMiddleware, movieController.deleteMovie);
 
 export default api
